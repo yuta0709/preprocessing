@@ -1,15 +1,15 @@
 #!/bin/bash
 
-for specimen in ./dataset/*/; do
+for specimen in /home/yuta/workspace/dataset/raw/*; do
     if [ -d "$specimen" ]; then
         echo "Contents of $specimen:"
         ls "$specimen"
         echo
 
         for data in "$specimen"/*; do
-            # cd $data
-            # zeek -r net.pcap
-            # cd -
+            cd $data
+            zeek -r net.pcap
+            cd -
             pcap_path="$data/conn.log"
             output_path="$TMP_DIR/$(basename $specimen)/$(basename $data)"
             mkdir -p $output_path

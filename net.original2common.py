@@ -63,7 +63,7 @@ def createRelativeTimeCSV(name):
 
 def createCommon(name, sec):
     src_dir = os.path.join(TMP_DIR, name)
-    out_dir=os.path.join(OUTPUT_DIR, name)
+    out_dir=os.path.join(OUTPUT_DIR, f"common{sec}sec", name)
     dir_list = os.listdir(src_dir)
     for dir in dir_list:
         csv_file_path = os.path.join(src_dir, dir, "net_session_relative.csv")
@@ -71,7 +71,7 @@ def createCommon(name, sec):
         if not os.path.exists(csv_out_dir):
             os.makedirs(csv_out_dir)
         
-        csv_file_output_path = os.path.join(out_dir, dir, f"common_{sec}s.csv")
+        csv_file_output_path = os.path.join(csv_out_dir, f"net.csv")
         
 
         with open(csv_file_path, 'r') as input_file, open(csv_file_output_path, 'w', newline='') as output_file:
