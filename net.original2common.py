@@ -14,7 +14,7 @@ import datetime
 OUTPUT_DIR=os.environ.get("OUTPUT_DIR")
 TMP_DIR=os.environ.get("TMP_DIR")
 
-COMMON_LIST = [30, 60, 90, 120, 180]
+COMMON_LIST = [30, 60, 90, 120, 150]
 
 def createRelativeTimeCSV(name):
     specimen_dir = os.path.join(TMP_DIR, name)
